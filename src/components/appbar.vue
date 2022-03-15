@@ -87,4 +87,10 @@ img {
   color: #f5deb3;
   border: solid 0.5px #f5deb3;
 }
+
+@media (max-width: 765px) {
+  .search-hotkey {
+    display: none;
+  }
+}
 </style>

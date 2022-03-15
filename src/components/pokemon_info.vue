@@ -142,10 +142,11 @@ onMounted(() => {
   justify-content: space-between;
   height: 16%;
   align-items: center;
+  padding: 0.3rem;
 }
 .stat h2 {
   color: wheat;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .about {
@@ -163,8 +164,15 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .modal-card {
-    width: 90%;
+    width: 95%;
     height: 80%;
+  }
+  .stat h2 {
+    color: wheat;
+    font-size: 1rem;
+  }
+  .stat {
+    padding: 0.2rem;
   }
 }
 </style>

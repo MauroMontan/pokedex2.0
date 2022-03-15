@@ -28,7 +28,7 @@ const searchPokemon = () => {
 <template>
   <overlay @keydown.esc="closeSearchBar" @close-overlay="closeSearchBar">
     <div class="search-bar">
-      <i class="material-icons">search</i>
+      <i @click="searchPokemon" class="material-icons">search</i>
 
       <input
         placeholder="press 'enter' to search, 'esc' to exit"
@@ -64,11 +64,20 @@ const searchPokemon = () => {
 .search-bar i {
   color: white;
   padding-left: 0.5rem;
+  cursor: pointer;
+}
+
+.search-bar i:hover {
+  color: black;
 }
 
 @media (max-width: 768px) {
   .search-bar {
     width: 90%;
+  }
+
+  .search-bar input {
+    content: none;
   }
 }
 </style>

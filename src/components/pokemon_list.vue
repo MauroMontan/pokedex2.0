@@ -57,4 +57,10 @@ onMounted(() => {
   background-color: #096553;
   color: beige;
 }
+
+@media (max-width: 768px) {
+  .cards-container {
+    margin-top: 15%;
+  }
+}
 </style>
