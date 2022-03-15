@@ -5,6 +5,7 @@ import searchBar from "./components/searchBar.vue";
 import pokemonInfo from "./components/pokemon_info.vue";
 import { useUiState } from "./store";
 import { onMounted } from "vue";
+import footerContent from "./components/footer.vue";
 
 const store = useUiState();
 
@@ -32,6 +33,9 @@ onMounted(() => {
 
   <pokemonInfo v-if="store.isPOkemonInfoOpen" />
   <searchBar v-if="store.isSearchBaroOpen" />
+  <footer>
+    <footerContent />
+  </footer>
 </template>
 
 <style>
@@ -44,9 +48,14 @@ onMounted(() => {
   padding: 0;
 }
 
+footer {
+  width: 100%;
+  height: 5rem;
+}
+
 body {
   height: 100vh;
-  overflow: hidden;
+  background-color: #99b499;
 }
 #app {
   background-color: #99b499;

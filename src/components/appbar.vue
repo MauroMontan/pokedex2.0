@@ -69,6 +69,9 @@ img {
   border-radius: 0.5rem;
   transition: all 0.3s ease 0s;
 }
+.actions button:nth-child(2) {
+  margin-left: 1rem;
+}
 .actions button:hover {
   transform: translateY(-3px);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,

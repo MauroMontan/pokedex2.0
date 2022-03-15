@@ -44,8 +44,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  overflow: auto;
+  height: 100%;
 }
 
 .content button {

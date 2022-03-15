@@ -35,7 +35,7 @@ const searchPokemon = () => {
         ref="input"
         v-model="inputSearch"
         type="text"
-        @keydown.enter.native="searchPokemon"
+        @keyup.enter="searchPokemon"
       />
     </div>
   </overlay>
