@@ -37,4 +37,19 @@
   color: #296052;
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .footer h2 {
+    font-size: 1rem;
+    color: #296052;
+  }
+  .footer .networks a {
+    margin-left: 0.3rem;
+    font-size: 1rem;
+    color: #296052;
+  }
+  .footer .networks i {
+    font-size: 1.2rem;
+  }
+}
 </style>
