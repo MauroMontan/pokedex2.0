@@ -33,6 +33,7 @@ nav {
   justify-content: space-between;
   padding: 1rem;
   align-items: center;
+  z-index: 2;
 }
 
 .app-title {

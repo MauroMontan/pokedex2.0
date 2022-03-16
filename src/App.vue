@@ -51,6 +51,7 @@ onMounted(() => {
 footer {
   width: 100%;
   height: 5rem;
+  z-index: 2;
 }
 
 body {
@@ -65,6 +66,7 @@ body {
 header {
   width: 100%;
   position: fixed;
+  z-index: 2;
 }
 
 ::-webkit-scrollbar {

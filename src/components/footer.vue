@@ -48,6 +48,7 @@
     font-size: 1rem;
     color: #296052;
   }
+
   .footer .networks i {
     font-size: 1.2rem;
   }
