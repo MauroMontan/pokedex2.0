@@ -18,11 +18,6 @@ const closePokemonInfo = () => {
 };
 
 onMounted(() => {
-  console.log(currentPokemon.value.name);
-  if (currentPokemon.value.name === undefined) {
-    store.isPOkemonInfoOpen = false;
-  }
-
   document.onkeydown = (e) => {
     e = e || window.event;
 
