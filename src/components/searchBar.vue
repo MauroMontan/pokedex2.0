@@ -20,7 +20,7 @@ const closeSearchBar = () => {
 };
 
 const searchPokemon = () => {
-  pokemonStore.getPokemon(inputSearch.value.toLowerCase());
+  pokemonStore.getCurrentPokemon(inputSearch.value.toLowerCase());
   closeSearchBar();
   store.isPOkemonInfoOpen = true;
 };

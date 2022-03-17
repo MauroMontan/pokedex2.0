@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { usePokemonStore } from "../store";
 import pokemonCard from "./pokemon_card.vue";
 const store = usePokemonStore();
@@ -17,6 +17,10 @@ const loadFiveMore = () => {
 onMounted(() => {
   store.getpokemonList(count.value);
 });
+
+const loading = computed(() => {
+  return store.isLoading;
+});
 </script>
 
 <template>
@@ -25,7 +29,11 @@ onMounted(() => {
       <pokemonCard v-for="pokemon in pokemonList" :pokemon="pokemon" />
     </div>
 
-    <button @click="loadFiveMore">load more</button>
+    <button @click="loadFiveMore">
+      <h3 v-if="loading === false">load more</h3>
+
+      <i v-else class="loading fa-solid fa-spinner"></i>
+    </button>
   </div>
 </template>
 
@@ -53,6 +61,24 @@ onMounted(() => {
   padding: 0.5rem;
   border: none;
   border-radius: 10px;
+  background-color: #096553;
+  color: beige;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.content button .loading {
+  font-size: 2rem;
+
+  animation: rotation 4s infinite linear;
+  border-radius: 100%;
   background-color: #096553;
   color: beige;
 }

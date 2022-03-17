@@ -19,7 +19,7 @@ const currentImage = computed(() => {
 });
 
 const togglePokemonInfo = () => {
-  pokemonStore.getPokemon(name);
+  pokemonStore.getCurrentPokemon(name);
   store.isPOkemonInfoOpen = !store.isPOkemonInfoOpen;
 };
 </script>
@@ -68,6 +68,7 @@ const togglePokemonInfo = () => {
   top: 0;
   left: 0;
   position: fixed;
+  cursor: pointer;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -78,6 +79,7 @@ const togglePokemonInfo = () => {
 .card-overlay h2 {
   font-size: 2.3rem;
   color: #f5deb3;
+  cursor: pointer;
 }
 
 .card-image {

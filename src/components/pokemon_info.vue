@@ -2,18 +2,27 @@
 import overlay from "./overlay.vue";
 import { usePokemonStore, useUiState } from "../store";
 import { storeToRefs } from "pinia";
-import { onMounted } from "vue";
+import { computed, onMounted } from "vue";
 
 const store = useUiState();
 const pokemonStore = usePokemonStore();
 
 const { currentPokemon } = storeToRefs(pokemonStore);
 
+const pokemonImage = computed(() => {
+  return currentPokemon.value.sprite;
+});
+
 const closePokemonInfo = () => {
   store.isPOkemonInfoOpen = false;
 };
 
 onMounted(() => {
+  console.log(currentPokemon.value.name);
+  if (currentPokemon.value.name === undefined) {
+    store.isPOkemonInfoOpen = false;
+  }
+
   document.onkeydown = (e) => {
     e = e || window.event;
 
@@ -31,11 +40,7 @@ onMounted(() => {
         <h2 v-text="currentPokemon.name" />
         <h2>#{{ currentPokemon.id }}</h2>
       </div>
-      <img
-        :src="currentPokemon.sprite"
-        alt="pokemon image"
-        class="modal-card-image"
-      />
+      <img :src="pokemonImage" alt="pokemon image" class="modal-card-image" />
 
       <div class="types">
         <h2 v-for="type in currentPokemon.types" v-text="type.type.name"></h2>
